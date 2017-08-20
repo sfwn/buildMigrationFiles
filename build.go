@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -24,7 +25,9 @@ func main() {
 	}
 	fmt.Println(string(out))
 	for i, sql := range strings.Split(strings.TrimSuffix(string(out), "\n"), "\n") {
-		tableName := strings.Replace(sql, ".sql", "", -1)
+		tableName := fmt.Sprintf("%s-%s",
+			time.Now().Format("20060102150405"),
+			strings.Replace(sql, ".sql", "", -1))
 		fmt.Printf("%d: %s\n", i+1, tableName)
 
 		// generate js
