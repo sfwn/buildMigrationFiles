@@ -7,14 +7,14 @@ generate {table_name}.js and relative up/down sqls
 
 ## structure
 ```
+├── README.md
 ├── build.go
 ├── migrations
 │   └── mysql
-│       ├── sqls
-│       │   ├── test_table-down.sql
-│       │   └── test_table-up.sql
-│       └── test_table.js
+│       ├── 20170821093300-test_table.js
+│       └── sqls
+│           ├── 20170821093300-test_table-down.sql
+│           └── 20170821093300-test_table-up.sql
 ├── template.js
 └── test_table.sql
-
 ```
